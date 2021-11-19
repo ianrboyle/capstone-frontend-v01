@@ -1,17 +1,35 @@
 <template>
   <div class="stocks-show">
-    <h4>Symbol: {{ stock.symbol }}</h4>
-    <p>Company Name: {{ stock.company_name }}</p>
-    <p>Cost Basis: {{ stock.cost_basis }}</p>
-    <p>Current Price: {{ stock.current_price }}</p>
-    <p>Quantity: {{ stock.quantity }}</p>
-    <router-link v-bind:to="`/stocks/${stock.id}/edit`">
-      <button type="button" class="btn btn-primary">Edit</button>
-    </router-link>
-    <button v-on:click="destroyStock()">Delete</button>
+    <div class="card" style="width: 18rem">
+      <div class="card-header">Symbol: {{ stock.symbol }}</div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Company Name: {{ stock.company_name }}</li>
+        <li class="list-group-item">Cost Basis: {{ stock.cost_basis }}</li>
+        <li class="list-group-item">Current Price: {{ stock.current_price }}</li>
+        <li class="list-group-item">Quantity: {{ stock.quantity }}</li>
+      </ul>
+      <div>
+        <router-link v-bind:to="`/stocks/${stock.id}/edit`">
+          <button type="button" class="btn btn-primary">Edit</button>
+        </router-link>
+        |
+        <router-link v-bind:to="`/stocks`">
+          <button type="button" class="btn btn-success">My Stocks</button>
+        </router-link>
+        |
+        <button class="btn btn-danger" v-on:click="destroyStock()">Delete</button>
+      </div>
+    </div>
   </div>
 </template>
-
+<style>
+.card {
+  margin: 0 auto;
+  float: none;
+  margin-bottom: 10px;
+  color: black;
+}
+</style>
 <script>
 import axios from "axios";
 

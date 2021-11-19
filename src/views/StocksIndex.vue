@@ -6,6 +6,7 @@
       <p>Company Name: {{ stock.company_name }}</p>
       <p>Cost Basis: {{ stock.cost_basis }}</p>
       <p>Current Price: {{ stock.current_price }}</p>
+      <p>Quantity: {{ stock.quantity }}</p>
     </div>
   </div>
 </template>

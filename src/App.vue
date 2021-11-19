@@ -12,6 +12,8 @@
       <router-link to="/signup">Signup</router-link>
       |
       <router-link to="/stocks">Your Stocks</router-link>
+      |
+      <router-link to="/stocks/new">Add a Stock</router-link>
     </div>
     <router-view />
   </div>

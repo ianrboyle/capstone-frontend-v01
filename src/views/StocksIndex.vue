@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div class="stocks-index">
     <h1>{{ message }}</h1>
     <div v-for="stock in stocks" :key="stock.id">
       <h4>Symbol: {{ stock.symbol }}</h4>
-      <p>Company Name: {{ stock.company_name }}</p>
-      <p>Cost Basis: {{ stock.cost_basis }}</p>
       <p>Current Price: {{ stock.current_price }}</p>
       <p>Quantity: {{ stock.quantity }}</p>
+      <router-link v-bind:to="`stocks/${stock.id}`">
+        <button type="button" class="btn btn-primary">More Info</button>
+      </router-link>
     </div>
   </div>
 </template>

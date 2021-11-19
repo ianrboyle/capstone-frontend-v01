@@ -5,6 +5,9 @@
     <p>Cost Basis: {{ stock.cost_basis }}</p>
     <p>Current Price: {{ stock.current_price }}</p>
     <p>Quantity: {{ stock.quantity }}</p>
+    <router-link v-bind:to="`/stocks/${stock.id}/edit`">
+      <button type="button" class="btn btn-primary">Edit</button>
+    </router-link>
     <button v-on:click="destroyStock()">Delete</button>
   </div>
 </template>

@@ -10,14 +10,14 @@
       </ul>
       <div>
         <router-link v-bind:to="`/stocks/${stock.id}/edit`">
-          <button type="button" class="btn btn-primary">Edit</button>
+          <button type="button" class="btn btn-outline-primary">Edit</button>
         </router-link>
         |
         <router-link v-bind:to="`/stocks`">
-          <button type="button" class="btn btn-success">My Stocks</button>
+          <button type="button" class="btn btn-outline-success">My Stocks</button>
         </router-link>
         |
-        <button class="btn btn-danger" v-on:click="destroyStock()">Delete</button>
+        <button class="btn btn-outline-danger" v-on:click="destroyStock()">Delete</button>
       </div>
     </div>
   </div>

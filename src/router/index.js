@@ -8,6 +8,7 @@ import StocksIndex from "../views/StocksIndex.vue";
 import StocksNew from "../views/StocksNew.vue";
 import StocksShow from "../views/StocksShow.vue";
 import StocksEdit from "../views/StocksEdit.vue";
+import Sectors from "../views/Sectors.vue";
 
 Vue.use(VueRouter);
 
@@ -32,6 +33,7 @@ const routes = [
   { path: "/stocks/new", name: "StocksNew", component: StocksNew },
   { path: "/stocks/:id", name: "StocksShow", component: StocksShow },
   { path: "/stocks/:id/edit", name: "StocksEdit", component: StocksEdit },
+  { path: "/sectors", name: "Sectors", component: Sectors },
 ];
 
 const router = new VueRouter({

@@ -92,13 +92,26 @@
 </style>
 
 <script>
+import axios from "axios";
 export default {
   data: function () {
     return {
       logInMessage: "",
       message: "",
       titleFilter: "",
+      sectors: [],
+      percentAccount: [],
     };
+  },
+  async created() {
+    const { data } = await axios.get("http://localhost:3000/sectors");
+    data.forEach((element) => {
+      const sector = element.sector;
+      this.sectors.push(sector);
+      const percentage = element.sector_percent_of_account;
+      this.percentAccount.push(percentage);
+    });
+    console.log(this.sectors, this.percentAccount);
   },
   methods: {
     isLoggedIn: function () {

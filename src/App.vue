@@ -63,7 +63,10 @@
         </div>
       </div>
     </nav>
-    <div class="empty">{{ message }}</div>
+    <div class="row-mt-5" v-if="sectors.length > 0">
+      <h2>Sectors</h2>
+      <line-chart :chartData="sectors" :options="chartOptions" label="Sectors"></line-chart>
+    </div>
     <router-view />
   </div>
 </template>
@@ -93,7 +96,11 @@
 
 <script>
 import axios from "axios";
+import LineChart from "./components/LineChart.vue";
 export default {
+  components: {
+    LineChart,
+  },
   data: function () {
     return {
       logInMessage: "",
@@ -101,6 +108,10 @@ export default {
       titleFilter: "",
       sectors: [],
       percentAccount: [],
+      chartOptions: {
+        responsive: true,
+        maintainAspectRatio: false,
+      },
     };
   },
   async created() {
